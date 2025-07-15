@@ -13,10 +13,11 @@
 import pandas as pd
 from dfProcessor import DataFrameProcessor
 
-class csvReader:
+class csvReader(DataFrameProcessor):
 
     def __init__(self):
         self.cropData = pd.read_csv("crop_data.csv")
+        super().__init__(self.cropData)
     
     def returnDataframe(self):
         return self.cropData
@@ -25,6 +26,7 @@ class csvReader:
 
 #test = csvReader()
 #df = test.returnDataframe()
+#print( test.returnLabels() )
 #dfTest = DataFrameProcessor(df)
 #print( dfTest.returnLabels() )
 #test.testPrint()
