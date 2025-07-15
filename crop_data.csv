@@ -1,5 +1,5 @@
 name,rotation_type,min_temp,avg_temp,max_temp,min_humidity,avg_humidity,max_humidity,min_rainfall,avg_rainfall,max_rainfall
-potato,root,7,16.9,26.7,60,,80,25,37.5,50
+potato,root,7,16.9,26.7,60,70,80,25,37.5,50
 carrot,root,4,15.5,27,60,72.5,85,25,37.5,50
 lettuce,leaf,4.5,14.3,24,50,65,80,25,37.5,50
 spinach,leaf,0,12,24,40,55,70,25.4,31.8,38.1
