@@ -12,8 +12,10 @@
 #into a frontend & backend for the website to actually work and it wasn't planned out that far.
 #Could just host a random backend for just the .env variables in 1 python file as well allowing this whole folder to become the frontend
 
-
+from dfProcessor import DataFrameProcessor
 import requests
+import json
+import pandas as pd
 import os 
 import dotenv
 from dotenv import load_dotenv
@@ -41,6 +43,29 @@ class weatherAPI:
 
         response = requests.get(url, headers = headers)
 
-        return response
+        return response.text
+
+    def returnDF(self):
+        #Parse JSON string
+        data_dict = json.loads( self.getWeather() )
+
+        #Flatten the structure
+        flat_dict = data_dict["data"].copy()
+        flat_dict.update(flat_dict.pop("values") )
+        flat_dict.update(data_dict["location"] )
+
+        #Create DF
+        df = pd.DataFrame( [flat_dict] )
+
+        return df
+
+    
+test = weatherAPI()
+dfTest = DataFrameProcessor( test.returnDF() )
+print(dfTest.returnLabels() )
+#print( test.getWeather().text )
+#weatherText = test.getWeather()
+#print( test.convertToDF(weatherText) )
+#print( test.returnLabels() )
 
 

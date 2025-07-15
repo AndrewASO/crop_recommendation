@@ -11,42 +11,34 @@
 #Rotation: Legumes --> Greens --> Fruits --> Root --> Legumes
 
 import pandas as pd
-
+from dfProcessor import DataFrameProcessor
 
 class csvReader:
 
     def __init__(self):
         self.cropData = pd.read_csv("crop_data.csv")
     
-    def returnLabels(self):
-        labels = self.cropData.columns.tolist()
-        return labels
-    
-    def returnColumn(self, colLabel):
-        col = self.cropData[colLabel]
-        return col
-    
-    def returnRow(self, rowNum):
-        row = self.cropData.iloc[rowNum]
-        return row
-    
     def returnDataframe(self):
         return self.cropData
 
 
-test = csvReader()
+
+#test = csvReader()
+#df = test.returnDataframe()
+#dfTest = DataFrameProcessor(df)
+#print( dfTest.returnLabels() )
 #test.testPrint()
 #print( test.returnLabels() )
 #print( test.returnRow(1) )
-testRow = test.returnRow(0)
+#testRow = test.returnRow(0)
 #print( testRow )
 #print( testRow.iloc[0] )
-print( test.returnColumn("name") )
+#print( test.returnColumn("name") )
 
-print( len(test.returnDataframe() ) )
-
+#print( len(test.returnDataframe() ) )
+'''
 if( "potato" == testRow.iloc[0] ):
     print("This test was successful at seeing testRow without tolist() can be used for comparisons")
 else:
     print("Test may have failed and testRow without tolist() might not be comparable")
-
+'''
