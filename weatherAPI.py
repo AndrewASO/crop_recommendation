@@ -62,6 +62,7 @@ class weatherAPI:
     
 #test = weatherAPI()
 #dfTest = DataFrameProcessor( test.returnDF() )
+#print( dfTest.returnColumn('temperature') )
 #print(dfTest.returnLabels() )
 #print( test.getWeather().text )
 #weatherText = test.getWeather()

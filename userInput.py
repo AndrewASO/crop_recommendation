@@ -1,6 +1,9 @@
 
 #This takes in the userInput and gives out an output for the idx of the selected crop variables & weather variable
 
+#Oopsies I forgot to add in the choice for user to select the location & unit selected for all of the data gathered
+#by the WeatherAPI. Eh, I'll add it once I finish the crop recommendation file
+
 from csvReader import csvReader
 from weatherAPI import weatherAPI
 from dfProcessor import DataFrameProcessor
@@ -36,7 +39,8 @@ class UserInput():
         #print(weather_label)
 
         #This returns as a list 
-        return crop_choices, weather_choice
+        #return crop_choices, weather_choice
+        return crop_range, weather_label
 
 
 #test = Input()
