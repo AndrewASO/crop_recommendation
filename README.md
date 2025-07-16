@@ -19,3 +19,4 @@ Future work Needed
 - Optimize the code
 - Add more data to the csv
 - Look for a more robust dataset online for the crops, or use webscraping to gather crop information
+- Add unit tests for each of the different classes
