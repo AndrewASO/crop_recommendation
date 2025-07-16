@@ -60,9 +60,9 @@ class weatherAPI:
         return df
 
     
-test = weatherAPI()
-dfTest = DataFrameProcessor( test.returnDF() )
-print(dfTest.returnLabels() )
+#test = weatherAPI()
+#dfTest = DataFrameProcessor( test.returnDF() )
+#print(dfTest.returnLabels() )
 #print( test.getWeather().text )
 #weatherText = test.getWeather()
 #print( test.convertToDF(weatherText) )
