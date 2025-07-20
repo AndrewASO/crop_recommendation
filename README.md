@@ -15,7 +15,7 @@ crops are separated into rotation types, and if there's no recommended crop with
 Future work Needed
 - Implement a user friendly front-end (Potentially as a website or tkinter)
 - Allow for more than 1 crop variable range to 1 weather variable comparison
-- Code for the user to select weatherAPI location & unit selected
+- Code for the user to select weatherAPI location & unit selected (Finished)
 - Optimize the code
 - Add more data to the csv
 - Look for a more robust dataset online for the crops, or use webscraping to gather crop information
