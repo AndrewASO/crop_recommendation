@@ -12,13 +12,18 @@ class UserInput():
     
     def __init__(self):
         self.csvCrop = csvReader()
-        self.weather = weatherAPI()
+        #self.weather = weatherAPI()
 
     def displayList(self, inputList):
         for idx, tables in enumerate(inputList):
             print(f"{idx}) {tables}")
     
     def getVariables(self):
+
+        weatherLocation = str( input("Please type in the location of the area you want the weather of: ") )
+        weatherUnit = str( input("Please enter the unit system you wish to use metric / imperial: ") )
+        weather = weatherAPI(weatherLocation, weatherUnit)
+
         cropList = self.csvCrop.returnLabels()
         self.displayList(cropList)
         #This would be the numbered list
@@ -29,7 +34,7 @@ class UserInput():
         #print(crop_choices)
         #print(crop_range)
 
-        dfWeatherProc = DataFrameProcessor( self.weather.returnDF() )
+        dfWeatherProc = DataFrameProcessor( weather.returnDF() )
         weatherLabel = dfWeatherProc.returnLabels()
         self.displayList( weatherLabel )
         weather_choice = int(input("Select a number for the corresponding variable to be compared to the range selected: ") )
